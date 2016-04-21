@@ -60,8 +60,14 @@ class DataField extends Ui.DataField
         } else {
             dc.setColor(color, Graphics.COLOR_TRANSPARENT);
         }
-        dc.drawText(xStart+width/2 , yStart, Graphics.FONT_SMALL, format("$1$%", [battery.format("%d")]), Graphics.TEXT_JUSTIFY_CENTER);
         
+        var display_pourcentage = App.getApp().getProperty("pourcentage");
+        
+        if(display_pourcentage){
+            dc.drawText(xStart+width/2 , yStart, Graphics.FONT_SMALL, format("$1$%", [battery.format("%d")]), Graphics.TEXT_JUSTIFY_CENTER);
+        }else{
+        	dc.fillRectangle(xStart + 1, yStart + 1, (width-2) * battery / 100, height - 2);
+        }
     }
 }
 
@@ -71,6 +77,11 @@ class BatteryDataField extends App.AppBase
     function getInitialView()
     {
         return [new DataField()];
+    }
+    
+    function onSettingsChanged()
+    {
+        Ui.requestUpdate();
     }
 
 }
