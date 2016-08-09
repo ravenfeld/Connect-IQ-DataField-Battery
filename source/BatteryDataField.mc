@@ -61,9 +61,9 @@ class DataField extends Ui.DataField
             dc.setColor(color, Graphics.COLOR_TRANSPARENT);
         }
         
-        var display_pourcentage = App.getApp().getProperty("pourcentage");
+        var display_perrcentage = App.getApp().getProperty("percentage");
         
-        if(display_pourcentage){
+        if(display_perrcentage){
             dc.drawText(xStart+width/2 , yStart, Graphics.FONT_SMALL, format("$1$%", [battery.format("%d")]), Graphics.TEXT_JUSTIFY_CENTER);
         }else{
         	dc.fillRectangle(xStart + 1, yStart + 1, (width-2) * battery / 100, height - 2);
