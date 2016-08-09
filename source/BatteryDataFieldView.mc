@@ -7,6 +7,10 @@ class DataField extends Ui.DataField
 {
     hidden var color ;
          
+    function initialize() {
+        DataField.initialize();
+    }
+         
     function onUpdate(dc)
     {
     
@@ -63,19 +67,4 @@ class DataField extends Ui.DataField
         	dc.fillRectangle(xStart + 1, yStart + 1, (width-2) * battery / 100, height - 2);
         }
     }
-}
-
-class BatteryDataField extends App.AppBase
-{
-
-    function getInitialView()
-    {
-        return [new DataField()];
-    }
-    
-    function onSettingsChanged()
-    {
-        Ui.requestUpdate();
-    }
-
 }
