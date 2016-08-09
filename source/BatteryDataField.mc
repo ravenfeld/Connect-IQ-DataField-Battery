@@ -5,14 +5,8 @@ using Toybox.Graphics as Gfx;
 
 class DataField extends Ui.DataField
 {
-	hidden var gps;
     hidden var color ;
-     
-    function compute(info)
-    {
-        gps = info.currentLocationAccuracy;
-    }
-    
+         
     function onUpdate(dc)
     {
     
