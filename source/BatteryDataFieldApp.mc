@@ -1,4 +1,5 @@
 using Toybox.Application as App;
+using Toybox.WatchUi as Ui;
 
 class BatteryDataFieldApp extends App.AppBase {
 
