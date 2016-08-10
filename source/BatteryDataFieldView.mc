@@ -5,14 +5,12 @@ using Toybox.Graphics as Gfx;
 
 class DataField extends Ui.DataField
 {
-	hidden var gps;
     hidden var color ;
-     
-    function compute(info)
-    {
-        gps = info.currentLocationAccuracy;
+         
+    function initialize() {
+        DataField.initialize();
     }
-    
+         
     function onUpdate(dc)
     {
     
@@ -69,19 +67,4 @@ class DataField extends Ui.DataField
         	dc.fillRectangle(xStart + 1, yStart + 1, (width-2) * battery / 100, height - 2);
         }
     }
-}
-
-class BatteryDataField extends App.AppBase
-{
-
-    function getInitialView()
-    {
-        return [new DataField()];
-    }
-    
-    function onSettingsChanged()
-    {
-        Ui.requestUpdate();
-    }
-
 }
