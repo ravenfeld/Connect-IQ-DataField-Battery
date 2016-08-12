@@ -1,5 +1,5 @@
 <resources>
     <string id="AppName">Batterie</string>
     <string id="percentage_title">Afficher le pourcentage</string>
-    
+    <string id="battery_low_title">Batterie faible</string>
 </resources>
