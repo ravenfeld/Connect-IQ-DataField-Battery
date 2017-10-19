@@ -24,7 +24,7 @@ class BatteryDataFieldView extends Ui.DataField
          var x = width / 2-size_w/2;
          var y = height / 2- size_h/2+5;
         
-        dc.setColor( color, Gfx.COLOR_TRANSPARENT );
+        dc.setColor( color, getBackgroundColor() );
                 
         if(flag>=OBSCURE_BOTTOM){
         	y = y-10;
@@ -61,7 +61,7 @@ class BatteryDataFieldView extends Ui.DataField
         var display_perrcentage = App.getApp().getProperty("percentage");
         
         if(display_perrcentage){
-            dc.drawText(xStart+width/2 , yStart, Graphics.FONT_SMALL, format("$1$%", [battery.format("%d")]), Graphics.TEXT_JUSTIFY_CENTER);
+            dc.drawText(xStart+width/2 , yStart+height/2, Graphics.FONT_SMALL, format("$1$%", [battery.format("%d")]), Graphics.TEXT_JUSTIFY_CENTER|Graphics.TEXT_JUSTIFY_VCENTER);
         }else{
         	dc.fillRectangle(xStart + 1, yStart + 1, (width-2) * battery / 100, height - 2);
         }
